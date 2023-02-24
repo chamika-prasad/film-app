@@ -1,0 +1,12 @@
+h1{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    color: rgb(232, 11, 11);
+    z-index: 991;
+}
+
+.particle{
+    position: absolute;
+    z-index: 990;
+}
