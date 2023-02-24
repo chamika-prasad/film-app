@@ -1,73 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&family=Tilt+Neon&family=Tourney:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&family=Tilt+Neon&family=Tourney:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&family=Tilt+Neon&family=Tourney:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&family=Tilt+Neon&family=Tourney:wght@300&display=swap");
 
-.container-style{
-    height: 100%;
-    position: relative;
+.container-style {
+  height: 100%;
+  position: relative;
 }
 
 .indicator {
-    width: 45px;
-    height: 12px;
-    background-color: rgb(179, 178, 176);
-    margin-left: 10px;
-    border-radius: 10px;
-    opacity: 0.8;
+  width: 45px;
+  height: 12px;
+  background-color: rgb(179, 178, 176);
+  margin-left: 10px;
+  border-radius: 10px;
+  opacity: 0.4;
+  z-index: 902;
 }
 
-.select-bg{
-    opacity: 0.4;
+.select-bg {
+  opacity: 0.8;
 }
 
-.transparent-bg{
-    width: 100%;
-    height: 100vh;
-    /* z-index: 998; */
-    background-image: linear-gradient(to top,rgba(255,0,0,0),rgb(46, 39, 67));
+.transparent-bg {
+  width: 100%;
+  height: 100vh;
+  z-index: 900;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgb(46, 39, 67)
+  );
 }
 
-.name{     
-     font-size: 180px;
-     color: hwb(0 100% 0%);
-     font-family: 'Tourney','cursive';
-     font-weight: 900;
-     -webkit-text-stroke: 0.0000001rem rgb(8, 8, 8);
-     transition: transform 0.4s;
+.name {
+  font-size: 180px;
+  color: hwb(0 100% 0%);
+  font-family: "Tourney", "cursive";
+  font-weight: 900;
+  -webkit-text-stroke: 0.0000001rem rgb(8, 8, 8);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 35%;
+  animation: animtext 4s steps(80, end);
+  transition: all cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
-
-.film{
-    top: 16%;
-    left: 10%;
-}
-
-.see{
-    top: 42%;
-    left: 20%;
-}
-
-.name:hover {
-    transform: scale(1.2);
+@keyframes animtext {
+  from {
+    width: 0;
+    transition: all 2s ease-in-out;
   }
-
-.discription{
-    /* top: 22%; */
-    width: 700px;
-    text-align: justify;
-    /* left:50%; */
-    color: white;
-    font-size: larger;
-    font-weight:300;
-    font-family: 'Tilt Neon', cursive;
 }
 
-.discription span{
-    font-size: 35px;
-    font-weight: 700;
+.film {
+  top: 16%;
+  left: 5%;
 }
 
-.startButton{
-    z-index: 997;
-    top: 80%;
-    left: 15%;
+.see {
+  top: 42%;
+  left: 15%;
+}
+
+/* .name:hover {
+    transform: scale(1.2);
+  } */
+
+.discription {
+  width: 700px;
+  text-align: justify;
+  color: white;
+  font-size: larger;
+  font-weight: 300;
+  font-family: "Tilt Neon", cursive;
+}
+
+.discription span {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.startButton {
+  z-index: 901;
+  top: 80%;
+  left: 15%;
 }
