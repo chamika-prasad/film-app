@@ -1,6 +1,8 @@
 import React from "react";
 import ParticlesBackground from "../component/ParticlesBackground";
 import './FilmList.css'
+import NavBar from "../component/NavBar";
+import SideBar from "../component/SideBar";
 
 const FilmList = () => {
   return (
@@ -9,9 +11,7 @@ const FilmList = () => {
         <ParticlesBackground />
       </div>
       <div className="content">
-        <h1>
-            chamika
-        </h1>
+        <NavBar />
       </div>
     </div>
   );
