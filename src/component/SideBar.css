@@ -18,3 +18,16 @@
   max-height: 730px;
   overflow-y: auto; 
 }
+
+.sidebarSiteName h1{
+  color: black;
+  position: absolute;
+  top:3%;
+  left:30.1%;
+  font-family: 'Shantell Sans', cursive;
+  font-style: oblique;
+  font-size: 25px;
+  -webkit-text-stroke: 0.1px white;
+  font-weight: 600;
+  z-index: 102;
+}
