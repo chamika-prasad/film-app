@@ -1,21 +1,21 @@
 const images = [
     {
-        url : 'images/1.jpg'
+        url : 'images/slider/1.jpg'
     },
     {
-        url : 'images/2.jpg'
+        url : 'images/slider/2.jpg'
     },
     {
-        url : 'images/3.jpg'
+        url : 'images/slider/3.jpg'
     },
     {
-        url : 'images/4.jpg'
+        url : 'images/slider/4.jpg'
     },
     {
-        url : 'images/5.jpg'
+        url : 'images/slider/5.jpg'
     },
     {
-        url : 'images/6.jpg'
+        url : 'images/slider/6.jpg'
     },
 ]
 

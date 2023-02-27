@@ -108,12 +108,12 @@ const BackGroundSlider = () => {
         films, look no further than <b>FILM SEE</b>. We're here to help you
         build your personal movie library, one download at a time.
       </div>
-      <div className="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+      <div className="position-absolute mainIndicator bottom-0 start-50 translate-middle-x pb-3">
         <div className="carousel-bullt d-flex">
           {images.map((item, index) => (
             <span
               key={index}
-              onClick={console.log('clicked')}
+              onClick={(e) => console.log('clicked')}
               id={index}
               className="indicator"
             ></span>
