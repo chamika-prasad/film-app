@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar as NavbarBs } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import SideBar from "./SideBar";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [showSearchBar, setShowsearchBar] = useState(false);
   const [slideBar, setSlideBar] = useState(false);
+  const navigate = useNavigate();
 
   const unSetMouse = () => {
     setShowsearchBar(false);
@@ -16,9 +17,19 @@ const NavBar = () => {
     setShowsearchBar(true);
   };
 
+  const handleChange = (e) => {
+    props.setSearchTerm(e.target.value);
+    //console.log(props.searchTerm);
+  }
+
   const showSideBar = () => {
     setSlideBar(!slideBar);
   };
+
+  const setListPage = () => {
+    window.location.reload();
+    navigate('/FilmList');
+  }
 
   useEffect(() => {
     if (slideBar) {
@@ -39,8 +50,8 @@ const NavBar = () => {
   return (
     <div>
       <NavbarBs
-        sticky="top"
-        className="navbar navbar-light  shadow-sm level align-items-baseline"
+       
+        className="navbar navbar-light  shadow-sm level align-items-baseline hi"
       >
         <Container fluid>
           <Nav className="me-auto">
@@ -64,6 +75,8 @@ const NavBar = () => {
                   onMouseLeave={unSetMouse}
                   onMouseEnter={setMouse}
                   placeholder="search here..."
+                  // value={props.searchTerm}
+                  onChange={handleChange}
                 />
               ) : (
                 <img
@@ -80,8 +93,8 @@ const NavBar = () => {
               <img className="px-2" src="images/nav/user.png" alt="" />
             </Nav.Link>
 
-            <Nav.Link to="/" as={NavLink}>
-              <img className="px-2" src="images/nav/home.png" alt="" />
+            <Nav.Link to="#" as={NavLink}>
+              <img className="px-2" src="images/nav/home.png" alt="" onClick={(e) => setListPage()}/>
             </Nav.Link>
 
             <Nav.Link to="#" as={NavLink}>
@@ -89,12 +102,17 @@ const NavBar = () => {
             </Nav.Link>
           </Nav>
         </Container>
+        <div className="siteName">
+        <h1>filmSEE.com</h1>
+      </div>
       </NavbarBs>
 
       <div className="sidebar" id="sidebar">
         <SideBar setSlideBar={setSlideBar} />
       </div>
     </div>
+
+
   );
 };
 
