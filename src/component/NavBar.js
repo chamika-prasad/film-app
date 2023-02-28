@@ -19,6 +19,7 @@ const NavBar = (props) => {
 
   const handleChange = (e) => {
     props.setSearchTerm(e.target.value);
+    props.SetChange(!props.change)
     //console.log(props.searchTerm);
   }
 
@@ -108,7 +109,7 @@ const NavBar = (props) => {
       </NavbarBs>
 
       <div className="sidebar" id="sidebar">
-        <SideBar setSlideBar={setSlideBar} />
+        <SideBar setSlideBar={setSlideBar} setYear={props.setYear} SetChange={props.SetChange} change={props.change} setLanguage={props.setLanguage} setGener={props.setGener}/>
       </div>
     </div>
 
