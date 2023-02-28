@@ -8,6 +8,10 @@ import { Row, Col } from "react-bootstrap";
 
 const FilmList = () => {
   const [searchTerm, setSearchTerm] = useState(null);
+  const [change,SetChange] = useState(false);
+  const [year,setYear] = useState(null)
+  const [language,setLanguage] = useState(null)
+  const [gener,setGener] = useState(null)
   const [dataSet, setDataSet] = useState(FilmData);
 
 
@@ -16,10 +20,35 @@ const FilmList = () => {
       const filteredProducts = FilmData.filter((film) =>
         film.movie_name.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      //console.log( "test" + filteredProducts);
+  
+      setDataSet(filteredProducts);
+    }else if(year != null){
+      const filteredProducts = FilmData.filter((film) =>
+        //film.movie_year.includes(year)
+        film.movie_year === year
+      );
+       setDataSet(filteredProducts);
+      // console.log(filteredProducts);
+    }else if(language != null){
+      const filteredProducts = FilmData.filter((film) =>
+        film.movie_language.toLowerCase().includes(language.toLowerCase())
+      );
+  
       setDataSet(filteredProducts);
     }
-  }, [searchTerm]);
+    else if(gener != null){
+      const filteredProducts = FilmData.filter((film) =>
+        // film.movie_type.toLowerCase().includes(language.toLowerCase())
+        ( film.movie_type.filter((item) =>
+        item.toLowerCase().includes(gener.toLowerCase())
+        
+        )).length !== 0
+      );
+  
+      setDataSet(filteredProducts);
+    }
+  
+  }, [change]);
 
   return (
     <div className="entire">
@@ -27,7 +56,7 @@ const FilmList = () => {
         <ParticlesBackground />
       </div>
       <div className="content">
-        <NavBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+        <NavBar setSearchTerm={setSearchTerm} SetChange={SetChange} change={change} setYear={setYear} setLanguage={setLanguage} setGener={setGener}/>
       </div>
 
       {/* <div className="siteName">

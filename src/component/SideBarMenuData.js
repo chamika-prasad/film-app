@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { SideBarData } from "../data/sidebardata";
 import "./SideBarMenuData.css";
+import { YearData } from "../data/yeardata";
+import { GenerData } from "../data/generdata";
+import { LanguageData } from "../data/languagedata";
 
 const SidebarLink = styled.span`
   display: flex;
@@ -55,6 +58,9 @@ const Dropdown = styled.span`
 `;
 
 const SideBarMenuData = (props) => {
+
+  //setYear={props.setYear} SetChange={props.SetChange} change={props.change}
+
   const [icon, setIcon] = useState(false);
 
   const showIcon = () => {
@@ -63,6 +69,22 @@ const SideBarMenuData = (props) => {
 
   const [hoverTitle, setHoverTitle] = useState(false);
   const [tempIndex, setTempIndex] = useState(100);
+
+
+  const getYear = (year) => {
+    props.SetChange(!props.change)
+    props.setYear(year)
+  }
+
+  const getLanguage = (language) => {
+    props.SetChange(!props.change)
+    props.setLanguage(language)
+  }
+
+  const getGener = (gener) => {
+    props.SetChange(!props.change)
+    props.setGener(gener)
+  }
 
   const unSetMouse = (index) => {
     setHoverTitle(false);
@@ -73,7 +95,7 @@ const SideBarMenuData = (props) => {
     setHoverTitle(true);
     setTempIndex(index);
     let str2 = document.getElementById(index);
-    console.log(str2);
+    //console.log(str2);
   };
 
   useEffect(() => {
@@ -120,24 +142,24 @@ const SideBarMenuData = (props) => {
           onMouseLeave={(e) => unSetMouse(props.index)}
           onMouseEnter={(e) => setMouse(props.index)}
         >
-          {SideBarData.map((subitem, index) => {
+          {YearData.map((subitem, index) => {
             return (
-              <Dropdown key={index}>
+              <Dropdown key={index} onClick={(e) => getYear(subitem.year)}>
                 <SidebarLabel>{subitem.year}</SidebarLabel>
               </Dropdown>
             );
           })}
         </DropdownContainer>
       )}
-
+     
       {icon && props.item.title === "Gener" && (
         <DropdownContainer
           onMouseLeave={(e) => unSetMouse(props.index)}
           onMouseEnter={(e) => setMouse(props.index)}
         >
-          {SideBarData.map((subitem, index) => {
+          {GenerData.map((subitem, index) => {
             return (
-              <Dropdown key={index}>
+              <Dropdown key={index} onClick={(e) => getGener(subitem.gener)}>
                 <SidebarLabel>{subitem.gener}</SidebarLabel>
               </Dropdown>
             );
@@ -150,9 +172,9 @@ const SideBarMenuData = (props) => {
           onMouseLeave={(e) => unSetMouse(props.index)}
           onMouseEnter={(e) => setMouse(props.index)}
         >
-          {SideBarData.map((subitem, index) => {
+          {LanguageData.map((subitem, index) => {
             return (
-              <Dropdown key={index}>
+              <Dropdown key={index} onClick={(e) => getLanguage(subitem.language)}>
                 <SidebarLabel>{subitem.Language}</SidebarLabel>
               </Dropdown>
             );
