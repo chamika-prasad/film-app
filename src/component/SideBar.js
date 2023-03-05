@@ -92,7 +92,7 @@ const SideBar = (props) => {
       </div>
       <div className="py-3 Main">
         {SideBarMenu.map((item, index) => {
-          return <SideBarMenuData item={item} index={index} key={index} setYear={props.setYear} SetChange={props.SetChange} change={props.change} setLanguage={props.setLanguage} setGener={props.setGener}/>;
+          return <SideBarMenuData item={item} setFlag={props.setFlag} flag={props.flag} index={index} key={index} setYear={props.setYear} SetChange={props.SetChange} setLanguage={props.setLanguage} setGener={props.setGener}/>;
         })}
       </div>
     </div>

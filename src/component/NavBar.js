@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar as NavbarBs } from "react-bootstrap";
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import SideBar from "./SideBar";
 
@@ -18,10 +18,11 @@ const NavBar = (props) => {
   };
 
   const handleChange = (e) => {
+    props.setFlag(!props.flag);
     props.setSearchTerm(e.target.value);
-    props.SetChange(!props.change)
+    props.SetChange("term");
     //console.log(props.searchTerm);
-  }
+  };
 
   const showSideBar = () => {
     setSlideBar(!slideBar);
@@ -29,7 +30,23 @@ const NavBar = (props) => {
 
   const setListPage = () => {
     window.location.reload();
-    navigate('/FilmList');
+    navigate("/FilmList");
+  };
+
+  const showDownBar = () => {
+    let str1 = document.getElementById("response-toggle-button");   
+    str1.classList.add("hide-expand-arrow");
+    let str2 = document.getElementById("down-bar");
+    str2.classList.remove("after-down-bar");
+    str2.classList.add("show-down-bar");
+  }
+
+  const hideDownBar = () => {
+    let str1 = document.getElementById("response-toggle-button");   
+    str1.classList.remove("hide-expand-arrow");
+    let str2 = document.getElementById("down-bar");
+    str2.classList.remove("show-down-bar");
+    str2.classList.add("after-down-bar");
   }
 
   useEffect(() => {
@@ -50,10 +67,7 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <NavbarBs
-       
-        className="navbar navbar-light  shadow-sm level align-items-baseline hi"
-      >
+      <NavbarBs className="navbar navbar-light  shadow-sm level align-items-baseline hi">
         <Container fluid>
           <Nav className="me-auto">
             <img
@@ -91,29 +105,69 @@ const NavBar = (props) => {
             </Nav.Link>
 
             <Nav.Link to="#" as={NavLink}>
-              <img className="px-2" src="images/nav/user.png" alt="" />
+              <img className="px-2 user" src="images/nav/user.png" alt="" />
             </Nav.Link>
 
             <Nav.Link to="#" as={NavLink}>
-              <img className="px-2" src="images/nav/home.png" alt="" onClick={(e) => setListPage()}/>
+              <img
+                className="px-2 home"
+                src="images/nav/home.png"
+                alt=""
+                onClick={(e) => setListPage()}
+              />
             </Nav.Link>
 
             <Nav.Link to="#" as={NavLink}>
-              <img className="px-2" src="images/nav/call-center.png" alt="" />
+              <img
+                className="px-2 call-center"
+                src="images/nav/call-center.png"
+                alt=""
+              />
             </Nav.Link>
           </Nav>
         </Container>
         <div className="siteName">
-        <h1>filmSEE.com</h1>
-      </div>
+          <h1>filmSEE.com</h1>
+        </div>
       </NavbarBs>
 
       <div className="sidebar" id="sidebar">
-        <SideBar setSlideBar={setSlideBar} setYear={props.setYear} SetChange={props.SetChange} change={props.change} setLanguage={props.setLanguage} setGener={props.setGener}/>
+        <SideBar
+          setSlideBar={setSlideBar}
+          setFlag={props.setFlag}
+          flag={props.flag}
+          setYear={props.setYear}
+          SetChange={props.SetChange}
+          setLanguage={props.setLanguage}
+          setGener={props.setGener}
+        />
       </div>
+
+      <div className="response-toggle-button" id="response-toggle-button">
+        <img className="px-2" src="images/nav/expand-arrow.png" alt="" id="expand-arrow" onClick={(e)=>{showDownBar()}} />
+      </div>
+
+      
+        <div className="down-bar" id="down-bar">
+          <p className="start pt-4">Search...</p>
+          <p>Profile</p>
+          <p>Home</p>
+          <p>Contact Us</p>
+          <div className="close-down-bar">
+          <img
+            className="px-2 close-img"
+            src="images/nav/close.png"
+            alt=""
+            onClick={(e) => {
+              hideDownBar();
+            }}
+          />
+        </div>
+        </div>
+
+        
+    
     </div>
-
-
   );
 };
 
