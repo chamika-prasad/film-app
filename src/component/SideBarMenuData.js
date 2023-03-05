@@ -72,18 +72,22 @@ const SideBarMenuData = (props) => {
 
 
   const getYear = (year) => {
-    props.SetChange(!props.change)
+    props.SetChange('year')
     props.setYear(year)
+    props.setFlag(!props.flag)
+    console.log(year);
   }
 
   const getLanguage = (language) => {
-    props.SetChange(!props.change)
+    props.SetChange('language')
     props.setLanguage(language)
+    props.setFlag(!props.flag)
   }
 
   const getGener = (gener) => {
-    props.SetChange(!props.change)
+    props.SetChange('gener')
     props.setGener(gener)
+    props.setFlag(!props.flag)
   }
 
   const unSetMouse = (index) => {
@@ -175,7 +179,7 @@ const SideBarMenuData = (props) => {
           {LanguageData.map((subitem, index) => {
             return (
               <Dropdown key={index} onClick={(e) => getLanguage(subitem.language)}>
-                <SidebarLabel>{subitem.Language}</SidebarLabel>
+                <SidebarLabel>{subitem.language}</SidebarLabel>
               </Dropdown>
             );
           })}
