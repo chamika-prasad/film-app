@@ -71,25 +71,10 @@ const FilmList = () => {
       <div className="content">
         <NavBar setSearchTerm={setSearchTerm} flag={flag} setFlag={setFlag} SetChange={SetChange} setYear={setYear} setLanguage={setLanguage} setGener={setGener}/>
       </div>
-
-      {/* <div className="siteName">
-        <h1>filmSEE.com</h1>
-      </div> */}
-
-      {/* <div>
-        <row xs={1} md={2} lg={4}>
-
-          {FilmData.map((item,index) => {
-           <col key={index}>
-               <MovieList item={item}/>
-            </col>
-          })}
-        </row>
-      </div> */}
       <div className="movieList">
-        <Row xs={1} md={2} lg={4} className="g-3">
+        <Row xs={1} md={2} lg={3} xl={4} className="g-3 mx-auto">
           {dataSet.map((item) => (
-            <Col key={item.movie_id} className="movieItem">
+            <Col key={item.movie_id} className="movieItem ">
               <MovieList item={item} />
             </Col>
           ))}
