@@ -1,0 +1,29 @@
+.gener {
+}
+
+.movie-name-year {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid white;
+  /* color: red; */
+}
+
+.movie-description {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid white;
+  /* color: red; */
+}
+
+.movie-propaties {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid white;
+}
+
+.movie-gener {
+  background-color: rgba(0, 0, 0, 1);
+  border: 3px solid white;
+}
+
+.movie-downlod-button {
+  background-color: rgba(0, 0, 0, 1);
+  border: 3px solid white;
+}

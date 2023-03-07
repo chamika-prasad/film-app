@@ -4,18 +4,11 @@ import { Link } from "react-router-dom"
 import "./MovieList.css";
 
 const MovieList = (props) => {
-
-
-    // useEffect(() => {
-    //     console.log("MovieList" + props.item.movie_name);
-    // }, [])
-    
+  const Movie_id = props.item.movie_id
   return (
-    // <div>
-    //   <h1 style={{color:"white",width:"50px"}}>{props.item.movie_name}</h1>
-    // </div>
+
     <Card bg='dark' border="primary" style={{opacity:0.8,color:"white"}}>
-    <Link to={`#`}><Card.Img 
+    <Link to={`/Movie/${Movie_id}`}><Card.Img 
         variant="top" 
         src={props.item.movie_image}
         height="200px"

@@ -65,7 +65,7 @@ const BackGroundSlider = () => {
       <div className="startButton position-absolute">
         <GetStartButton />
       </div>
-      <div className="discription position-absolute top-0 start-50 mt-5 pt-5">
+      <div className="discription position-absolute mt-5 pt-5">
         <span>
           <strong>W</strong>
         </span>
@@ -119,6 +119,9 @@ const BackGroundSlider = () => {
             ></span>
           ))}
         </div>
+      </div>
+      <div className="position-absolute top-0 p-5 response">
+        <h4 className="" style={{color:"white"}}>Any Thing No Longer Support !!</h4>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 
 .container-style {
   height: 100%;
-  position: relative;
+  /* position: relative; */
 }
 
 .indicator {
@@ -25,7 +25,8 @@
 
 .transparent-bg {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  /* height: 100vh; */
   z-index: 900;
   background-image: linear-gradient(
     to top,
@@ -42,7 +43,7 @@
   -webkit-text-stroke: 0.0000001rem rgb(8, 8, 8);
   white-space: nowrap;
   overflow: hidden;
-  width: 35%;
+  width: 44%;
   animation: animtext 4s steps(80, end);
   transition: all cubic-bezier(0.1, 0.7, 1, 0.1);
 }
@@ -55,13 +56,17 @@
 }
 
 .film {
-  top: 16%;
-  left: 5%;
+  /* top: 16%; */
+  top:8vw;
+  /* left: 5%; */
+  left:2.5vw;
 }
 
 .see {
-  top: 42%;
-  left: 15%;
+  /* top: 42%; */
+  top:21vw;
+  /* left: 15%; */
+  left:7.5vw;
 }
 
 /* .name:hover {
@@ -69,21 +74,229 @@
   } */
 
 .discription {
-  width: 700px;
+  /* width: 700px; */
+  top:0vw;
+  left:48vw;
+  width: 47vw;
   text-align: justify;
   color: white;
   font-size: larger;
   font-weight: 300;
   font-family: "Tilt Neon", cursive;
+  font-size: 1.3vw;
 }
 
 .discription span {
-  font-size: 35px;
+  font-size: 2.2vw;
   font-weight: 700;
 }
 
 .startButton {
   z-index: 901;
-  top: 80%;
-  left: 15%;
+  top:40vw;
+  left:15vw;
 }
+
+.response{
+  justify-content: center;
+  z-index: 1000;
+  visibility: hidden;
+}
+/* @media (max-width: 1191px) {
+  .film  {
+    top:1vw;
+    left:18vw;
+    font-size: 20vw;
+  }
+
+  .see{
+    top:27vw;
+    left: 30vw;
+    font-size: 20vw;
+  }
+
+  .discription{
+    top:45vw;
+    left: 27vw;
+
+  }
+
+  .startButton {
+    top:125vw;
+    left:30vw;
+    padding-top: 2px;
+  }
+} */
+/* 
+@media (max-width: 1180px) {
+  .film  {
+    top:1vw;
+    left:18vw;
+    font-size: 10vw;
+  }
+
+  .see{
+    top:27vw;
+    left: 30vw;
+    font-size: 20vw;
+  }
+} */
+
+@media (max-width: 1191px) {
+  .film  {
+    /* top:1vw;
+    left:18vw;*/
+    font-size: 12vw; 
+  }
+
+  .see{
+    /* top:27vw;
+    left: 30vw;
+    font-size: 20vw; */
+    font-size: 12vw; 
+  }
+
+  .discription{
+    /* top:45vw;
+    left: 27vw; */
+
+  }
+
+  .startButton {
+    /* top:125vw;
+    left:30vw;
+    padding-top: 2px; */
+  }
+}
+
+@media (max-width: 659px) {
+
+  .film  {
+    top:1vw;
+    left:18vw;
+    font-size: 15vw; 
+    
+  }
+
+  .see{
+     top:20vw;
+    left: 30vw;
+    font-size: 15vw; 
+  }
+  .startButton {
+     top:98vw;
+    left:35vw;
+  }
+
+  .discription{
+     top:30vw;
+     width: 55vw;
+   left: 24vw;
+   font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 579px){
+  .startButton {
+    top:110vw;
+ }
+}
+
+@media (max-height:735px) {
+  .discription{
+    font-size: 1vw;
+  }
+
+  .film  {
+    top:0.2vw;
+    left:0vw;
+    font-size: 10vw; 
+    
+  }
+
+  .see{
+     top:10vw;
+    left: 5vw;
+    font-size: 10vw; 
+  }
+  .startButton {
+     top:27vw;
+    left:15vw;
+  }
+}
+
+@media (max-height:504px) {
+  .film  {
+    top:0.2vw;
+    left:0vw;
+    font-size: 7vw;     
+  }
+
+  .see{
+    top:7vw;
+   left: 5vw;
+   font-size: 7vw; 
+ }
+
+ .startButton {
+  top:18vw;
+ left:15vw;
+}
+
+.discription{
+  font-size: 0.7vw;
+}
+}
+
+@media (max-height:350px){
+  .film  {
+    top:0.2vw;
+    left:-12vw;
+    font-size: 5vw;     
+  }
+
+  .see{
+    top:5vw;
+   left: -8vw;
+   font-size: 5vw; 
+ }
+
+ .startButton {
+  top:3vw;
+ left:25vw;
+}
+
+.discription{
+  top:-5vw;
+  width: 30vw;
+  font-size: 0.6vw;
+}
+}
+
+@media (max-height:293px){
+  .discription{
+    /* top:-5vw;
+    width: 30vw; */
+    /* font-size: 0.2vw; */
+    visibility: hidden;
+  }
+
+  .name{
+    visibility: hidden;
+  }
+
+ .startButton {
+  /* top:3vw;
+ left:25vw; */
+ visibility: hidden;
+}
+
+.mainIndicator{
+  visibility: hidden;
+}
+
+.response{
+  visibility: visible;
+}
+}
+
