@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FilmData } from "../data/filmdata";
 import * as RiIcons from "react-icons/ri";
 import "./Movie.css";
 
 const Movie = () => {
+  const [movieDownload,setMovieDownload] = useState(false)
   const movie = useParams();
 
   const movie_Details = FilmData.find(
     (item) => item.movie_id == movie.Movie_id
   );
-
+  
   return (
     <div>
       <div
@@ -83,7 +84,13 @@ const Movie = () => {
         >
           <div style={{ width: "150px" }}>
             <div className="text-white shadow rounded-5 pt-2 pb-2 text-center movie-downlod-button">
-              Download <RiIcons.RiDownload2Fill />
+             
+              {
+                movieDownload ? <>Downloading...</>: <a href="https://drive.google.com/uc?id=1MGb5PAZAbbYCAxxyrdt9kf19bSWh4YQO&export=download" className="font-monospace" style={{textDecoration:"none",color:"white"}} onClick={()=>setMovieDownload(true)}>Download <RiIcons.RiDownload2Fill /></a>
+              }
+              
+              
+               
             </div>
           </div>
         </div>
