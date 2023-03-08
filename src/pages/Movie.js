@@ -2,10 +2,19 @@ import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FilmData } from "../data/filmdata";
 import * as RiIcons from "react-icons/ri";
+import NavBar from "../component/NavBar";
+import ParticlesBackground from "../component/ParticlesBackground";
 import "./Movie.css";
 
 const Movie = () => {
   const [movieDownload,setMovieDownload] = useState(false)
+  const [searchTerm, setSearchTerm] = useState(null);
+  const [change,SetChange] = useState(null);
+  const [year,setYear] = useState(null)
+  const [language,setLanguage] = useState(null)
+  const [gener,setGener] = useState(null)
+  const [flag,setFlag] = useState(false)
+  const isSEarchBarShow = false;
   const movie = useParams();
 
   const movie_Details = FilmData.find(
@@ -13,16 +22,20 @@ const Movie = () => {
   );
   
   return (
-    <div>
+    <div className="entire">
+      <ParticlesBackground />
       <div
         style={{
           backgroundImage: `url(${movie_Details.movie_image})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           minHeight: "100vh",
-          opacity: "0.9",
+          opacity: "0.8",
         }}
       >
+         <div className="content">
+        <NavBar setSearchTerm={setSearchTerm} flag={flag} setFlag={setFlag} SetChange={SetChange} setYear={setYear} setLanguage={setLanguage} setGener={setGener} isSEarchBarShow={isSEarchBarShow}/>
+      </div>
         <div className="container-sm" style={{ width: "100%" }}>
           <div className="d-flex align-items-center justify-content-center">
             <div style={{ width: "40vw" }}>

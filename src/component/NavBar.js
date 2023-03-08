@@ -29,8 +29,11 @@ const NavBar = (props) => {
   };
 
   const setListPage = () => {
-    window.location.reload();
-    navigate("/FilmList");
+
+    if(props.isSEarchBarShow){
+      window.location.reload();
+      navigate("/FilmList");
+    }
   };
 
   const showDownBar = () => {
@@ -50,19 +53,35 @@ const NavBar = (props) => {
   }
 
   useEffect(() => {
-    if (slideBar) {
-      let str1 = document.getElementById("sidebar");
-      let str2 = document.getElementById("menu");
-      str1.classList.remove("after");
-      str1.classList.add("apend");
-      str2.classList.add("hidden");
-    } else {
-      let str1 = document.getElementById("sidebar");
-      let str2 = document.getElementById("menu");
-      str1.classList.remove("apend");
-      str1.classList.add("after");
-      str2.classList.remove("hidden");
+
+    if(props.isSEarchBarShow){
+      if (slideBar) {
+        let str1 = document.getElementById("sidebar");
+        let str2 = document.getElementById("menu");
+        str1.classList.remove("after");
+        str1.classList.add("apend");
+        str2.classList.add("hidden");
+      } else {
+        let str1 = document.getElementById("sidebar");
+        let str2 = document.getElementById("menu");
+        str1.classList.remove("apend");
+        str1.classList.add("after");
+        str2.classList.remove("hidden");
+      }
     }
+    // if (slideBar) {
+    //   let str1 = document.getElementById("sidebar");
+    //   let str2 = document.getElementById("menu");
+    //   str1.classList.remove("after");
+    //   str1.classList.add("apend");
+    //   str2.classList.add("hidden");
+    // } else {
+    //   let str1 = document.getElementById("sidebar");
+    //   let str2 = document.getElementById("menu");
+    //   str1.classList.remove("apend");
+    //   str1.classList.add("after");
+    //   str2.classList.remove("hidden");
+    // }
   }, [slideBar]);
 
   return (
@@ -70,7 +89,7 @@ const NavBar = (props) => {
       <NavbarBs className="navbar navbar-light  shadow-sm level align-items-baseline hi">
         <Container fluid>
           <Nav className="me-auto">
-            <img
+            {props.isSEarchBarShow ? (<img
               className="menu"
               id="menu"
               src="images/nav/menu.png"
@@ -78,7 +97,10 @@ const NavBar = (props) => {
               onClick={(e) => {
                 showSideBar();
               }}
-            />
+            />):(<div className="secondSiteName">
+            <h1 className="site">filmSEE.com</h1>
+          </div>)}
+
           </Nav>
 
           <Nav>
@@ -93,42 +115,46 @@ const NavBar = (props) => {
                   // value={props.searchTerm}
                   onChange={handleChange}
                 />
-              ) : (
+              ) : (props.isSEarchBarShow ?
                 <img
                   className="px-2 searchPng"
                   src="images/nav/search.png"
                   onMouseLeave={unSetMouse}
                   onMouseEnter={setMouse}
                   alt=""
-                />
+                /> : null
               )}
             </Nav.Link>
 
             <Nav.Link to="#" as={NavLink}>
-              <img className="px-2 user" src="images/nav/user.png" alt="" />
+              <img className="px-2 user" src="/images/nav/user.png" alt="" />
             </Nav.Link>
 
-            <Nav.Link to="#" as={NavLink}>
+            <Nav.Link to="/FilmList" as={NavLink}>
               <img
                 className="px-2 home"
-                src="images/nav/home.png"
+                src="/images/nav/home.png"
                 alt=""
                 onClick={(e) => setListPage()}
               />
             </Nav.Link>
 
-            <Nav.Link to="#" as={NavLink}>
+            <Nav.Link to="/ContactUs" as={NavLink}>
               <img
                 className="px-2 call-center"
-                src="images/nav/call-center.png"
+                src="/images/nav/call-center.png"
                 alt=""
               />
             </Nav.Link>
           </Nav>
         </Container>
-        <div className="siteName">
+
+        {
+          props.isSEarchBarShow ?(<div className="siteName">
           <h1>filmSEE.com</h1>
-        </div>
+        </div>):null
+        }
+ 
       </NavbarBs>
 
       <div className="sidebar" id="sidebar">
@@ -144,19 +170,27 @@ const NavBar = (props) => {
       </div>
 
       <div className="response-toggle-button" id="response-toggle-button">
-        <img className="px-2" src="images/nav/expand-arrow.png" alt="" id="expand-arrow" onClick={(e)=>{showDownBar()}} />
+        <img className="px-2" src="/images/nav/expand-arrow.png" alt="" id="expand-arrow" onClick={(e)=>{showDownBar()}} />
       </div>
 
       
         <div className="down-bar" id="down-bar">
+          {props.isSEarchBarShow ? (<>
           <p className="start pt-4">Search...</p>
           <p>Profile</p>
           <p>Home</p>
           <p>Contact Us</p>
+          </>) : (
+            <>
+          <p className="start pt-4">Profile</p>
+          <p>Home</p>
+          <p>Contact Us</p>
+            </>
+          )}
           <div className="close-down-bar">
           <img
             className="px-2 close-img"
-            src="images/nav/close.png"
+            src="/images/nav/close.png"
             alt=""
             onClick={(e) => {
               hideDownBar();

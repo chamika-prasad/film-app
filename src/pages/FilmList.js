@@ -14,6 +14,7 @@ const FilmList = () => {
   const [gener,setGener] = useState(null)
   const [flag,setFlag] = useState(false)
   const [dataSet, setDataSet] = useState(FilmData);
+  const isSEarchBarShow = true;
 
 
   useEffect(() => {
@@ -69,7 +70,7 @@ const FilmList = () => {
         <ParticlesBackground />
       </div>
       <div className="content">
-        <NavBar setSearchTerm={setSearchTerm} flag={flag} setFlag={setFlag} SetChange={SetChange} setYear={setYear} setLanguage={setLanguage} setGener={setGener}/>
+        <NavBar setSearchTerm={setSearchTerm} flag={flag} setFlag={setFlag} SetChange={SetChange} setYear={setYear} setLanguage={setLanguage} setGener={setGener} isSEarchBarShow={isSEarchBarShow}/>
       </div>
       <div className="movieList">
         <Row xs={1} md={2} lg={3} xl={4} className="g-3 mx-auto">

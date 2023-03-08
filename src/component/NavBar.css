@@ -87,6 +87,19 @@ img{
     z-index: 102;
 }
 
+.secondSiteName .site{
+    color: black;
+    position: absolute;
+    top:25%;
+    left:2%;
+    font-family: 'Shantell Sans', cursive;
+    font-style: oblique;
+    font-size: 25px;
+    -webkit-text-stroke: 0.1px white;
+    font-weight: 600;
+    z-index: 102;
+}
+
 .response-toggle-button{
     
     position: absolute;
