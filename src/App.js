@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import HomePage from "./pages/HomePage";
 import FilmList from "./pages/FilmList";
 import Movie from "./pages/Movie";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/Movie/:Movie_id" element={<Movie />} />
 
         <Route path="/FilmList" element={<FilmList />} />
+
+        <Route path="/ContactUs" element={<ContactUs />} />
 
       </Routes>
     </div>

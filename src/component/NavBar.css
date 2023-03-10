@@ -1,6 +1,6 @@
 img{
     width: 45px;
-    margin-right: 10px;
+    margin-right: 9px;
 }
 
 .searchPng{
@@ -79,6 +79,19 @@ img{
     position: absolute;
     top:39%;
     left:5%;
+    font-family: 'Shantell Sans', cursive;
+    font-style: oblique;
+    font-size: 25px;
+    -webkit-text-stroke: 0.1px white;
+    font-weight: 600;
+    z-index: 102;
+}
+
+.secondSiteName .site{
+    color: black;
+    position: absolute;
+    top:25%;
+    left:2%;
     font-family: 'Shantell Sans', cursive;
     font-style: oblique;
     font-size: 25px;

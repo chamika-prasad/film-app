@@ -9,6 +9,24 @@
     font-size:20px
 }
 
-.year{
-    padding-left: 6cm;
+
+.card-body::-webkit-scrollbar {
+    width: 0px;
+    background-color: transparent;
+  }
+
+  .card-img-top {
+    height: 194px;
+    width: 100%; /* Set fixed height for card image */
+    object-fit: cover; /* Scale image to cover card image area */
+  }
+
+ 
+  .singleItem{
+    transition: transform .2s;
+}
+
+.singleItem:hover{
+    transform: scale(1.03);
+    box-shadow: 5px 5px 40px 10px  white;
 }

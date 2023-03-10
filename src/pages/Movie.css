@@ -1,5 +1,11 @@
-.gener {
-}
+/* .content{
+  z-index: 1000;
+} */
+
+/* .entire{
+  max-height: 100vh;
+  overflow-y: auto; 
+} */
 
 .movie-name-year {
   background-color: rgba(0, 0, 0, 0.8);
