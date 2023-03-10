@@ -1,31 +1,40 @@
-import React,{useEffect} from 'react'
-import { Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React from "react";
+import { Link } from "react-router-dom";
 import "./MovieList.css";
 
 const MovieList = (props) => {
-  const Movie_id = props.item.movie_id
+  const Movie_id = props.item.movie_id;
   return (
+    <Link to={`/Movie/${Movie_id}`} style={{ textDecoration: "none" }}>
+      <div
+        className="card singleItem mt-4 text-center item border-secondary bg-dark"
+        style={{
+          opacity: 0.8,
+          color: "white",
+          height: "323px",
+          width: "350px",
+          borderWidth: "3px",
+        }}
+      >
+        <img
+          className="card-img-top"
+          src={props.item.movie_image}
+          alt="Card image cap"
+        />
 
-    <Card bg='dark' border="primary" style={{opacity:0.8,color:"white"}}>
-    <Link to={`/Movie/${Movie_id}`}><Card.Img 
-        variant="top" 
-        src={props.item.movie_image}
-        height="200px"
-        style={{objectFit:"cover"}}
-        /></Link>
-        <Card.Body className="d-flex flex-column ">
-            <Card.Title className="  align-items-baseline ">
-                <span className="movieName">{props.item.movie_name}</span>
-                {/* <span className="ms-2 text-muted">{props.item.movie_year}</span> */}
-            </Card.Title>
-            <Card.Text className="row">
-              <span className="col">{props.item.movie_language}</span>  
-              <span className="col year"> {props.item.movie_year}</span>
-                </Card.Text>
-        </Card.Body>
-    </Card>
-  )
-}
+        <div className="card-body mt-1 overflow-auto">
+          <div className="card-title text-start">
+            <span className="movieName ">{props.item.movie_name}</span>
+          </div>
+          <div className="card-text pt-3 row font-monospace">
+            <span className="col text-start">{props.item.movie_language}</span>
+            <span className="col text-end"> {props.item.movie_year}</span>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
-export default MovieList
+export default MovieList;

@@ -69,24 +69,11 @@ const NavBar = (props) => {
         str2.classList.remove("hidden");
       }
     }
-    // if (slideBar) {
-    //   let str1 = document.getElementById("sidebar");
-    //   let str2 = document.getElementById("menu");
-    //   str1.classList.remove("after");
-    //   str1.classList.add("apend");
-    //   str2.classList.add("hidden");
-    // } else {
-    //   let str1 = document.getElementById("sidebar");
-    //   let str2 = document.getElementById("menu");
-    //   str1.classList.remove("apend");
-    //   str1.classList.add("after");
-    //   str2.classList.remove("hidden");
-    // }
   }, [slideBar]);
 
   return (
     <div>
-      <NavbarBs className="navbar navbar-light  shadow-sm level align-items-baseline hi">
+      <NavbarBs className="navbar navbar-light  shadow-sm level align-items-baseline">
         <Container fluid>
           <Nav className="me-auto">
             {props.isSEarchBarShow ? (<img

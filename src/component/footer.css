@@ -1,0 +1,17 @@
+footer{
+    background-color: rgba(19, 20, 35,0.8);
+    /* background-color: rgba(0, 0, 0,0.8); */
+}
+
+footer p{
+    text-align: justify;
+  }
+  
+  footer h5{
+    text-align: justify;
+    color: white;
+  }
+
+.row-1,.row-2{
+  margin-right: 0px;
+}

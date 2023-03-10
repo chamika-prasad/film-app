@@ -5,6 +5,7 @@ import * as RiIcons from "react-icons/ri";
 import NavBar from "../component/NavBar";
 import ParticlesBackground from "../component/ParticlesBackground";
 import "./Movie.css";
+import Footer from "../component/footer";
 
 const Movie = () => {
   const [movieDownload,setMovieDownload] = useState(false)
@@ -109,6 +110,10 @@ const Movie = () => {
         </div>
       </div>
       {/* </div> */}
+
+      {/* <div className="footer">
+        <Footer />
+      </div> */}
     </div>
   );
 };
